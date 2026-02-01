@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import ThemeToggle from './theme-toggle';
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -39,6 +40,7 @@ export default function RootLayout({
     return (
         <html lang="en" className="dark">
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black`}>
+                <Analytics />
                 <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-black/[.08] dark:border-white/[.12]">
                     <div className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
                         <Link href="/" className="font-semibold tracking-tight dark:text-white">
